@@ -58,11 +58,6 @@ def test_segment_different_input(en_detector):
     assert result_stream == ["Hello world.", "How are you?", "I'm fine."]
 
 
-def test_etc_stays_with_a_parenthetical_continuation(en_detector):
-    text = "Items A, B, etc. (reference), and more."
-    assert list(en_detector.segment(text)) == [text]
-
-
 @pytest.mark.parametrize("lang,test_data", ALL_TEST_DATA.items())
 def test_segment_multiple_langs(subtests, lang, test_data):
     """test that each language's test data passes."""
@@ -213,6 +208,9 @@ def test_rule_cache_lru(en_detector):
         # Basic html tags
         "<b>Run!</b>| He yelled with all his strenght.",
         "that is so <sub>cool</sub>.| Did you try it?",
+
+        # Reference abbreviations before a parenthetical continuation (fix for #356)
+        "Items A, B, etc. (reference), and more.",
 
         # Multi-digit vertical list items
         "12. The first item.\n|13. The second item.",

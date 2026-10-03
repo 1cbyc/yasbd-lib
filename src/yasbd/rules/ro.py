@@ -21,7 +21,11 @@ class RoRules(Rules):
         "R.S.R", "R.P.R", "S.U.A", "U.E", "M.B",
     }
 
-    REFERENCE_ABBRVS = Rules.REFERENCE_ABBRVS | {
+    # Keep the base "etc" exclusion: the Roman-numeral lookahead also matches
+    # Romanian sentence starters such as "Lista", so inheriting it would merge
+    # otherwise separate sentences. Parenthetical continuations are still
+    # protected by the universal rule.
+    REFERENCE_ABBRVS = (Rules.REFERENCE_ABBRVS - {"etc"}) | {
         # Bibliographical & Academic Citations
         "vezi", "apud", "id", "trad", "coord", "colab",
         "urm", "ș.a", "obs", "șamd",

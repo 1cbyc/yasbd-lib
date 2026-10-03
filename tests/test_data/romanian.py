@@ -15,7 +15,7 @@ TEST_DATA = [
     "Citiți cap. 3 și 4.| Examenul este săptămâna viitoare.",
     "Str. Mihai Viteazul nr. 15.| Clădirea este la colț.",
     "Bd. Unirii nr. 25, ap. 8.| Scara B, etajul 3.",
-    "Aduceți apă, pâine, etc. Lista e lungă.",
+    "Aduceți apă, pâine, etc.| Lista e lungă.",
     "Discutăm despre termeni, șamd.| Nu e necesar să insistăm.",
     "A venit, a văzut, dpdv al strategiei.| Rezultatul e clar.",
 
