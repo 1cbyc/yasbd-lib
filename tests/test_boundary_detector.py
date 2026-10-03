@@ -58,6 +58,30 @@ def test_segment_different_input(en_detector):
     assert result_stream == ["Hello world.", "How are you?", "I'm fine."]
 
 
+@pytest.mark.parametrize(
+    "lang, abbreviation",
+    [
+        ("en", "etc"),
+        ("af", "ens"),
+        ("ar", "إلخ"),
+        ("bg", "и т.н"),
+        ("cs", "atd"),
+        ("de", "usw"),
+        ("el", "κ.λπ"),
+        ("id", "dll"),
+        ("it", "ecc"),
+        ("kk", "т.б"),
+        ("nl", "enz"),
+        ("ru", "и т. д"),
+        ("sk", "atď"),
+        ("vi", "v.v"),
+    ],
+)
+def test_equivalents_of_etc_stay_with_a_parenthetical_continuation(lang, abbreviation):
+    text = f"Items A, B, {abbreviation}. (reference), and more."
+    assert list(BoundaryDetector(lang=lang).segment(text)) == [text]
+
+
 @pytest.mark.parametrize("lang,test_data", ALL_TEST_DATA.items())
 def test_segment_multiple_langs(subtests, lang, test_data):
     """test that each language's test data passes."""

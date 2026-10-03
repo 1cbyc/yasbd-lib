@@ -21,7 +21,7 @@ class RoRules(Rules):
         "R.S.R", "R.P.R", "S.U.A", "U.E", "M.B",
     }
 
-    REFERENCE_ABBRVS = Rules.REFERENCE_ABBRVS | {
+    REFERENCE_ABBRVS = (Rules.REFERENCE_ABBRVS - {"etc"}) | {
         # Bibliographical & Academic Citations
         "vezi", "apud", "id", "trad", "coord", "colab",
         "urm", "ș.a", "obs", "șamd",
