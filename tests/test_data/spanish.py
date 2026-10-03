@@ -19,6 +19,8 @@ TEST_DATA = [
     "Llama al dir. general al tel. 555-1234.",
     "Llama al tel. 555-0199.| Envía el fax. 02-555 mañana.",
     "Compré pan, leche, etc. para la cena.",
+    "La temperatura del motor alcanzó los 120.5°C.| Afortunadamente, el sistema siguió funcionando.",
+    "La ruta mide 10 km.| Después comienza el sendero.",
     "Lea p. ej. el capítulo 5.",
     "Ayer le dije que no.| 5 personas llegaron después.",
     "Lo dejo entre nos.| 3 personas lo saben.",

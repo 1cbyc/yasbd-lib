@@ -34,8 +34,8 @@ class EsRules(Rules):
 
     INLINE_ONLY_ABBRVS = Rules.INLINE_ONLY_ABBRVS - {"ave"} | {
         "ej", "p.ej", "vid", "cll", "cra", "diag", "transv", "mz", "mza", "lt",
-        "urb", "asent", "dpto", "prov", "mnpio", "conj", "edif", "ofic", "km",
-        "av", "avd", "c", "pso", "ctra", "pl", "blvr",
+        "urb", "asent", "dpto", "prov", "mnpio", "conj", "edif", "ofic",
+        "av", "avd", "pso", "ctra", "pl", "blvr",
     }
 
     DATE_ABBRVS = Rules.DATE_ABBRVS | {
